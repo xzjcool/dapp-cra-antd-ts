@@ -1,21 +1,44 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { initialize, set } from 'react-ga'
+import { isMobile } from 'react-device-detect'
 import { BrowserRouter } from 'react-router-dom'
 
 import { App } from './app'
+import { BrowserLocalesProvider } from './providers'
 import './index.less'
-import { reportWebVitals } from './reportWebVitals'
+
+if (!!window.ethereum) {
+  window.ethereum.autoRefreshOnNetworkChange = false
+}
+
+const GOOGLE_ANALYTICS_ID: string | undefined = process.env.REACT_APP_GOOGLE_ANALYTICS_ID
+if (typeof GOOGLE_ANALYTICS_ID === 'string') {
+  initialize(GOOGLE_ANALYTICS_ID, {
+    gaOptions: {
+      storage: 'none',
+      storeGac: false,
+    },
+  })
+  set({
+    anonymizeIp: true,
+    customBrowserType: !isMobile
+      ? 'desktop'
+      : 'web3' in window || 'ethereum' in window
+      ? 'mobileWeb3'
+      : 'mobileRegular',
+  })
+} else {
+  initialize('test', { testMode: true, debug: true })
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <BrowserLocalesProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </BrowserLocalesProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 )
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()

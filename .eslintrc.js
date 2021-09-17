@@ -13,8 +13,8 @@ module.exports = {
   rules: {
     'no-console': ['off'],
     'import/named': ['off'],
-    'import/order': ['error', { 'newlines-between': 'always' }],
-    'import/no-default-export': ['error'],
+    'import/order': ['off'],
+    'import/no-default-export': ['warn'],
     'import/no-internal-modules': [
       'error',
       {

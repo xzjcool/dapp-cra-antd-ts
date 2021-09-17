@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, useMemo } from 'react'
 import { ContractInterface, ethers } from 'ethers'
 import { useWallet } from 'use-wallet'
+
 import { ethersRPCProvider } from '../utils'
 
 export const useEthersProvider = () => {
