@@ -3,15 +3,15 @@ import { Button } from 'antd'
 import { useIntl } from 'react-intl'
 import { Link } from 'react-router-dom'
 
-const Home = () => {
+const About = () => {
   const { formatMessage } = useIntl()
 
   return (
     <div>
-      <Button type="primary">{formatMessage({ id: 'Home' })} Page</Button>
-      <Link to="/about">About</Link>
+      <Button type="primary">{formatMessage({ id: 'About' })} Page</Button>
+      <Link to="/">Home</Link>
     </div>
   )
 }
 
-export default Home
+export default About

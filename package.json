@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.3.0",
+    "@tanem/react-nprogress": "^3.0.79",
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.1.9",

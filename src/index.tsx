@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { App } from './app'
 import { BrowserLocalesProvider } from './providers'
 import './index.less'
+import { ThemeProvider } from './themes'
 
 if (!!window.ethereum) {
   window.ethereum.autoRefreshOnNetworkChange = false
@@ -35,9 +36,11 @@ if (typeof GOOGLE_ANALYTICS_ID === 'string') {
 ReactDOM.render(
   <React.StrictMode>
     <BrowserLocalesProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
     </BrowserLocalesProvider>
   </React.StrictMode>,
   document.getElementById('root'),
