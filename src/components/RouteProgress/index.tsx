@@ -46,7 +46,7 @@ const Cycle = styled.div`
   animation: ${rotate} 0.5s linear infinite;
 `
 
-export const Progress = () => {
+export const RouteProgress = () => {
   return (
     <div>
       <Bar />

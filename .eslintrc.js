@@ -14,11 +14,11 @@ module.exports = {
     'no-console': ['off'],
     'import/named': ['off'],
     'import/order': ['off'],
-    'import/no-default-export': ['warn'],
+    'import/no-default-export': 'error',
     'import/no-internal-modules': [
       'error',
       {
-        allow: ['**/components/*', 'lodash/random', '**/**/constants/*', '**/hooks/*'],
+        allow: ['**/components/*', 'lodash/random', '**/**/constants/*', '**/hooks/*', '**/pages/*'],
       },
     ],
     '@typescript-eslint/explicit-function-return-type': ['off'],
