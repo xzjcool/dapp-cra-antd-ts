@@ -2,13 +2,20 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 const prg = keyframes`
-  from {
-    transform: translateX(-100%);
+  0% {
+    transform: translateX(-80%);
   }
 
-  to {
+  5% {
+   transform: translateX(-50%);
+  }
+
+  80% {
+    transform: translateX(-20%);
+  }
+
+  100% {
     transform: translateX(0%);
-    display: none;
   }
 `
 

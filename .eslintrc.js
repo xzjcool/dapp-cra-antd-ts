@@ -18,7 +18,7 @@ module.exports = {
     'import/no-internal-modules': [
       'error',
       {
-        allow: ['**/components/*', 'lodash/random', '**/**/constants/*', '**/hooks/*', '**/pages/*'],
+        allow: ['**/components/*', 'lodash/random', '**/pages/*'],
       },
     ],
     '@typescript-eslint/explicit-function-return-type': ['off'],
